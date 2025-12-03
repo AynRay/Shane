@@ -1,0 +1,220 @@
+/* Basic Reset and Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #00bfff; /* Bright color for links */
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header & Navigation */
+header {
+    background: #1a1a1a;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li a {
+    margin-left: 20px;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00bfff;
+}
+
+/* Hero/Banner Section */
+.hero-banner {
+    background-image: url('background.jpg'); /* Use your dark, crazy background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Optional overlay for the banner for better text readability */
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    /* Add 'dope effects' here, e.g., text shadow, glowing effect, or unique font */
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.5); 
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: #aaa;
+}
+
+/* General Section Styling */
+section {
+    padding: 100px 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #00bfff;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Music Section */
+.artist-bio p {
+    margin-bottom: 1rem;
+}
+
+.music-item {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrap on mobile */
+    margin-bottom: 2rem;
+    background: #1a1a1a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.cover-art {
+    width: 150px;
+    height: 150px;
+    margin-right: 1.5rem;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.music-details {
+    flex-grow: 1;
+}
+
+.music-details h4 {
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.release-message {
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: #bbb;
+}
+
+/* Added CSS for embedded players spacing */
+.player-embed {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.streaming-links a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    margin-top: 10px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Button styles */
+.btn {
+    transition: background-color 0.3s;
+}
+
+.btn-spotify { background-color: #1DB954; color: white; }
+.btn-apple { background-color: #FC3C44; color: white; }
+.btn-youtube { background-color: #FF0000; color: white; }
+.btn-buy { background-color: #FFA500; color: white; }
+.btn-primary { background-color: #00bfff; color: white; padding: 1rem 2rem; font-size: 1.1rem; }
+
+/* Contact Section */
+.contact-details p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Basic Responsiveness */
+@media (max-width: 600px) {
+    .music-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cover-art {
+        margin: 0 auto 1rem auto;
+    }
+    
+    .streaming-links a {
+        display: block;
+        margin-right: 0;
+    }
+}
+
+.hero-content {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(30px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
